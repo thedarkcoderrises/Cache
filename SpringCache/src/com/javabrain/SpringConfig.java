@@ -21,7 +21,8 @@ public class SpringConfig {
 	public CacheManager cacheManager() {
   		SimpleCacheManager scm = new SimpleCacheManager();
   		scm.setCaches(Arrays.asList(
-  				new ConcurrentMapCache("test", false)
+  				new ConcurrentMapCache("test", false),
+  				new ConcurrentMapCache("test2", false)
   				));
   		return scm;
 	}

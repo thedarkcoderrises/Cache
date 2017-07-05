@@ -20,4 +20,10 @@ public class PersonDaoImpl implements PersonDao {
 	public List<Person> getPersons() {
 		return per.getPersons();
 	}
+
+	@Override
+	@Cacheable(value = { "test2" }, condition="#age<50")
+	public Person getPersonOnAge(int age) {
+		return new Person("A",age);
+	}
 }

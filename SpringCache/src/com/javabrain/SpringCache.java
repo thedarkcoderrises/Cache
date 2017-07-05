@@ -17,11 +17,22 @@ public class SpringCache {
 		
 
 	Person p1 = personDao.getPersonOnIndex("A",0);
-	System.out.println(p1);
 	Person p2 = personDao.getPersonOnIndex("A",2);
-	System.out.println(p2);
+
+	if(p1==p2){
+		System.out.println("Cached on name");
+	}else{
+		System.out.println("unique");
+	}
 	
+	p1 = personDao.getPersonOnAge(20);
+	p2 = personDao.getPersonOnAge(20);
 	
+	if(p1==p2){
+		System.out.println("Cached on age");
+	}else{
+		System.out.println("unique");
+	}
 	
 	}
 }
